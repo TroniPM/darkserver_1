@@ -15,7 +15,6 @@ add_executable(cellapp
 )
 
 TARGET_LINK_LIBRARIES(cellapp "common")
-TARGET_LINK_LIBRARIES(cellapp "tinyxml2")
 TARGET_LINK_LIBRARIES(cellapp "ssl")
 TARGET_LINK_LIBRARIES(cellapp "crypto")
 TARGET_LINK_LIBRARIES(cellapp "lua.5.2.4")

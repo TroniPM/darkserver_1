@@ -22,7 +22,6 @@ add_executable(logapp
 )
 
 TARGET_LINK_LIBRARIES(logapp "common")
-TARGET_LINK_LIBRARIES(logapp "tinyxml2")
 TARGET_LINK_LIBRARIES(logapp "ssl")
 TARGET_LINK_LIBRARIES(logapp "crypto")
 TARGET_LINK_LIBRARIES(logapp "lua.5.2.4")

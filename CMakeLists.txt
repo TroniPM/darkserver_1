@@ -36,7 +36,6 @@ add_definitions(-D__RELOGIN)
 
 
 include_directories(
-	./_deps/tinyxml2/
 	/usr/local/include/
 	/usr/local/include/mysql/
 	/usr/local/opt/openssl/include/
@@ -50,7 +49,6 @@ SET (LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
 link_directories(
 	${PROJECT_BINARY_DIR}/lib
 	/usr/local/lib/
-	./_deps/tinyxml2/
 	/usr/local/opt/curl/lib/
 	/usr/local/opt/openssl/lib/
 )

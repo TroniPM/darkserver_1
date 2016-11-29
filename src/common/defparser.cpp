@@ -231,7 +231,7 @@ namespace mogo
     void CDefParser::ParseEntitiesXml(const char* pszFileName)
     {
         XMLDocument doc;
-        if(!doc.LoadFile(pszFileName))
+        if(XML_SUCCESS != doc.LoadFile(pszFileName))
         {
             ThrowException(-1, "Failed to parse file: %s .", pszFileName);
         }
@@ -268,7 +268,7 @@ namespace mogo
     SEntityDef* CDefParser::ParseDef(const char* pszDefFn)
     {
         XMLDocument doc;
-        if(!doc.LoadFile(pszDefFn))
+        if(XML_SUCCESS != doc.LoadFile(pszDefFn))
         {
             ThrowException(-1, "Failed to parse def file: %s.", pszDefFn);
         }

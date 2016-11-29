@@ -15,7 +15,6 @@ add_executable(baseapp
 )
 
 TARGET_LINK_LIBRARIES(baseapp "common")
-TARGET_LINK_LIBRARIES(baseapp "tinyxml2")
 TARGET_LINK_LIBRARIES(baseapp "ssl")
 TARGET_LINK_LIBRARIES(baseapp "crypto")
 TARGET_LINK_LIBRARIES(baseapp "lua.5.2.4")

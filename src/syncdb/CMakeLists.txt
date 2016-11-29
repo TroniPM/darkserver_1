@@ -21,7 +21,6 @@ add_executable(syncdb
 )
 
 TARGET_LINK_LIBRARIES(syncdb "common")
-TARGET_LINK_LIBRARIES(syncdb "tinyxml2")
 TARGET_LINK_LIBRARIES(syncdb "ssl")
 TARGET_LINK_LIBRARIES(syncdb "crypto")
 TARGET_LINK_LIBRARIES(syncdb "lua.5.2.4")

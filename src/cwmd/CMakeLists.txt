@@ -17,7 +17,6 @@ add_executable(cwmd
 )
 
 TARGET_LINK_LIBRARIES(cwmd "common")
-TARGET_LINK_LIBRARIES(cwmd "tinyxml2")
 TARGET_LINK_LIBRARIES(cwmd "ssl")
 TARGET_LINK_LIBRARIES(cwmd "crypto")
 TARGET_LINK_LIBRARIES(cwmd "lua.5.2.4")

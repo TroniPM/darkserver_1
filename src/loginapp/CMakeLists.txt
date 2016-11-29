@@ -17,7 +17,6 @@ add_executable(loginapp
 )
 
 TARGET_LINK_LIBRARIES(loginapp "common")
-TARGET_LINK_LIBRARIES(loginapp "tinyxml2")
 TARGET_LINK_LIBRARIES(loginapp "ssl")
 TARGET_LINK_LIBRARIES(loginapp "crypto")
 TARGET_LINK_LIBRARIES(loginapp "lua.5.2.4")

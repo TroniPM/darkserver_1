@@ -20,7 +20,6 @@ add_executable(dbmgr
 )
 
 TARGET_LINK_LIBRARIES(dbmgr "common")
-TARGET_LINK_LIBRARIES(dbmgr "tinyxml2")
 TARGET_LINK_LIBRARIES(dbmgr "ssl")
 TARGET_LINK_LIBRARIES(dbmgr "crypto")
 TARGET_LINK_LIBRARIES(dbmgr "lua.5.2.4")

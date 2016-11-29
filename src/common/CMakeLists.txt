@@ -13,6 +13,8 @@ SET(CELL_SRCS
 )
 
 SET(COMMON_SRCS
+	tinyxml2.cpp
+	tinyxml2.h
 	balance.cpp
 	balance.h
 	base64.cpp
