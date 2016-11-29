@@ -43,8 +43,9 @@ include_directories(
 	/usr/local/include/luajit-2.1/
 )
 
-SET (EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
+SET (EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
 SET (LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
+
 
 link_directories(
 	${PROJECT_BINARY_DIR}/lib
@@ -53,8 +54,6 @@ link_directories(
 	/usr/local/opt/curl/lib/
 	/usr/local/opt/openssl/lib/
 )
-
-
 
 
 # common library
@@ -83,3 +82,5 @@ add_subdirectory(src/syncdb)
 
 # timerd
 add_subdirectory(src/timerd)
+
+

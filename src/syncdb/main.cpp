@@ -30,10 +30,10 @@ int SyncDb(int argc, char* argv[])
     if(argc < 2)
     {
         cout << "Usage:" << argv[0] << " cfg_file" << endl;
-        return -1;
+//        return -1;
     }
 
-    int nRet = the_world.init(argv[1]);
+    int nRet = the_world.init("../cfg.ini");
     
     //cout << nRet << endl; 
     if(nRet != 0)
