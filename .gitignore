@@ -21,7 +21,7 @@ bin/Debug
 *.la
 *.a
 *.lib
-
+bin/log
 # Executables
 *.exe
 *.out
