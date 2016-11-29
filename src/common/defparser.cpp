@@ -230,7 +230,7 @@ namespace mogo
     //解析entities.xml
     void CDefParser::ParseEntitiesXml(const char* pszFileName)
     {
-        XMLDocument doc;
+        XMLDocument doc(true, COLLAPSE_WHITESPACE);
         if(XML_SUCCESS != doc.LoadFile(pszFileName))
         {
             ThrowException(-1, "Failed to parse file: %s .", pszFileName);
@@ -267,7 +267,7 @@ namespace mogo
 
     SEntityDef* CDefParser::ParseDef(const char* pszDefFn)
     {
-        XMLDocument doc;
+        XMLDocument doc(true, COLLAPSE_WHITESPACE);
         if(XML_SUCCESS != doc.LoadFile(pszDefFn))
         {
             ThrowException(-1, "Failed to parse def file: %s.", pszDefFn);

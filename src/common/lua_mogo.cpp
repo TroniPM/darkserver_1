@@ -1962,7 +1962,7 @@ int XmlReadToDs(lua_State* L, ENUM_XML_READ_DS ds_type)
         pszKey = luaL_checkstring(L, 2);
     }
 
-    XMLDocument doc;
+    XMLDocument doc(true, COLLAPSE_WHITESPACE);
     if(doc.LoadFile(pszFile))
     {
         XMLElement* root = doc.RootElement();
@@ -2070,7 +2070,7 @@ int XmlReadSpace(lua_State* L)
 {
     const char* pszFile = luaL_checkstring(L, 1);
 
-    XMLDocument doc;
+    XMLDocument doc(true, COLLAPSE_WHITESPACE);
     if(doc.LoadFile(pszFile))
     {
         XMLElement* root = doc.RootElement();
