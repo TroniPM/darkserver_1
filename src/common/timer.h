@@ -27,7 +27,7 @@ namespace mogo
     {
         TimerData(unsigned int nStart, int nInterval, unsigned int nTimerId,
                   TENTITYID nId, int nUserData)
-            : m_unNextTick(nStart), m_nInterval(nInterval), m_nTimerId(nTimerId),
+            :  m_nTimerId(nTimerId), m_nInterval(nInterval), m_unNextTick(nStart),
               m_nEntityId(nId), m_nUserData(nUserData)
         {
         }

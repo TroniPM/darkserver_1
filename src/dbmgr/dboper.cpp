@@ -113,7 +113,7 @@ namespace mogo
         oss << "INSERT INTO tbl_" << strEntity << " (timestamp";
         oss2 << " values (" << (int)time(NULL) ;
 
-        int i = 0;
+        //int i = 0;
         map<string, VOBJECT*>::const_iterator iter = props.begin();
         for(; iter != props.end(); ++iter)
         {
@@ -141,7 +141,7 @@ namespace mogo
         ostringstream oss;
         oss << "UPDATE tbl_" << strEntity << " SET timestamp=" << (int)time(NULL);
 
-        int i = 0;
+        //int i = 0;
         map<string, VOBJECT*>::const_iterator iter = props.begin();
         for(; iter != props.end(); ++iter)
         {
@@ -320,7 +320,7 @@ namespace mogo
         vtFields.reserve(num_fields);
 
         MYSQL_FIELD * fd;
-        for(int i=0; fd = mysql_fetch_field(result); ++i)
+        for(int i=0; (fd = mysql_fetch_field(result)); ++i)
         {
             char* s = fd->name;
             //printf("field_name=%s\n", s);
@@ -417,7 +417,7 @@ namespace mogo
         vtFields.reserve(num_fields);
 
         MYSQL_FIELD * fd;
-        for(int i=0; fd = mysql_fetch_field(result); ++i)
+        for(int i=0; (fd = mysql_fetch_field(result)); ++i)
         {
             char* s = fd->name;
             //printf("field_name=%s\n", s);
@@ -530,7 +530,7 @@ namespace mogo
         vtFields.reserve(num_fields);
 
         MYSQL_FIELD * fd;
-        for(int i=0; fd = mysql_fetch_field(result); ++i)
+        for(int i=0; (fd = mysql_fetch_field(result)); ++i)
         {
             char* s = fd->name;
             //printf("field_name=%s\n", s);
@@ -681,7 +681,7 @@ namespace mogo
         vtFields.reserve(num_fields);
 
         MYSQL_FIELD * fd;
-        for(int i=0; fd = mysql_fetch_field(result); ++i)
+        for(int i=0; (fd = mysql_fetch_field(result)); ++i)
         {
             char* s = fd->name;
             //printf("field_name=%s\n", s);
@@ -1063,7 +1063,7 @@ namespace mogo
             {
                 //string
                 char szLen[4];
-                snprintf(szLen, sizeof(szLen), "%03d", sv_len);
+                snprintf(szLen, sizeof(szLen), "%03zu", sv_len);
                 szLen[sizeof(szLen)-1] = '\0';
 
                 oss2 << sk << "=s" << szLen << sv;
@@ -1169,7 +1169,8 @@ namespace mogo
             strErr.assign("item not define");
             return -1;
         }
-        int32_t avatarId;
+        
+        //int32_t avatarId;
         ostringstream strInsert;
         strInsert << "INSERT INTO tbl_" << itemName << " (timestamp";
         u.SetLen(0);
@@ -1236,7 +1237,7 @@ namespace mogo
         list<string>::iterator it = ll.begin();
         for( unsigned int i =0; i != ll.size() - 1; it++, i++ )
         {
-            string& str = *it;
+            //string& str = *it;
             strInsert << *it <<", ";
         }
         strInsert << *it <<";";
@@ -1377,7 +1378,7 @@ namespace mogo
 
 		for( unsigned int i =0; i != ll.size() - 1; it++, i++ )
 		{
-			string& str = *it;
+			//string& str = *it;
 			strInsert << *it <<", ";
 		}
 		strInsert << *it <<";";
@@ -1554,7 +1555,7 @@ namespace mogo
 
 
         MYSQL_FIELD * fd;
-        for(int i=0; fd = mysql_fetch_field(result); ++i)
+        for(int i=0; (fd = mysql_fetch_field(result)); ++i)
         {
             char* s = fd->name;
 
@@ -1699,7 +1700,7 @@ namespace mogo
         //                                  entityId, strCallBackFunc.c_str(), strEntityType.c_str(), num_fields);
 
         MYSQL_FIELD * fd;
-        for(int i=0; fd = mysql_fetch_field(result); ++i)
+        for(int i=0; (fd = mysql_fetch_field(result)); ++i)
         {
             char* s = fd->name;
             //printf("field_name=%s\n", s);
@@ -1868,7 +1869,7 @@ namespace mogo
         uu.Encode(MSGID_BASEAPP_TABLE2SELECT_RESP) << eid << nCbId << strEntity << (uint16_t)num_fields;
 
         MYSQL_FIELD * fd;
-        for(int i=0; fd = mysql_fetch_field(result); ++i)
+        for(int i=0; (fd = mysql_fetch_field(result)); ++i)
         {
             char* s = fd->name;
             //printf("field_name=%s\n", s);

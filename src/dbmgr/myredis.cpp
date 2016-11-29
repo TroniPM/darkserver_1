@@ -117,7 +117,7 @@ namespace mogo
         map<string, VOBJECT*>::const_iterator iter = props.begin();
         for(; iter != props.end(); ++iter)
         {
-            VOBJECT* p = iter->second;
+            //VOBJECT* p = iter->second;
             PushVObjectToRedisCmd(i, iter->first, *(iter->second), argv, argvlen);
             i += 2;
         }

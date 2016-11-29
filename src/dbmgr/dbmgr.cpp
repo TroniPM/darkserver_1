@@ -24,7 +24,7 @@ int CDbMgrServer::HandleSendPluto()
     enum { SEND_COUNT = 1000, };
     CPluto* u;
     int i = 0;
-    while(u = g_pluto_sendlist.PopPluto())
+    while((u = g_pluto_sendlist.PopPluto()))
     {
         CMailBox* mb = u->GetMailbox();
         if(mb)
@@ -40,7 +40,10 @@ int CDbMgrServer::HandleSendPluto()
     }
 
     CEpollServer::HandleSendPluto();
+    
+    return 0;
 }
+
 CPlutoList g_pluto_recvlist;
 CPlutoList g_pluto_sendlist;
 bool g_bShutdown = false;

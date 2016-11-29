@@ -2435,7 +2435,8 @@ namespace mogo
 
 		ClearLuaStack(m_L);
 		CLuaCallback& cb = GetCallback();
-		int n = cb.GetObj(m_L, ref);
+		
+        //int n = cb.GetObj(m_L, ref);
 		lua_pushnumber(m_L, newId);
 		//lua_pcall(m_L, 2, 0, 0);
 		int ret = lua_pcall(m_L, 1, 0, 0);

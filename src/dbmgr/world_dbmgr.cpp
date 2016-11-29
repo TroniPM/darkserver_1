@@ -327,7 +327,7 @@ namespace mogo
             return -1;
         }
 
-        CEntityMailbox& emb = VOBJECT_GET_EMB((*p)[0]);
+        //CEntityMailbox& emb = VOBJECT_GET_EMB((*p)[0]);
         TDBID dbid = VOBJECT_GET_U64((*p)[1]);
         SEntityPropFromPluto* p2 = (SEntityPropFromPluto*)((*p)[2]->vv.p);
 
