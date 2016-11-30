@@ -1,5 +1,7 @@
 SET(CWMDBIN_SRCS
+	cwmd.h
 	cwmd.cpp
+	world_cwmd.h
 	world_cwmd.cpp
 	main.cpp
 )
