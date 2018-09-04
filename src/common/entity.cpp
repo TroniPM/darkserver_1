@@ -95,9 +95,9 @@ namespace mogo
     {
         //first param is userdata
 
-        TENTITYID triggerEid = luaL_checkint(L, 2);
+        TENTITYID triggerEid = luaL_checkinteger(L, 2);
 
-        int nEventId = luaL_checkint(L, 3);
+        int nEventId = luaL_checkinteger(L, 3);
         CHECK_UNSIGNED(nEventId, 3);
 
         const char* szFuncName = luaL_checkstring(L, 4);
@@ -116,9 +116,9 @@ namespace mogo
     {
         //first param is userdata
 
-        TENTITYID triggerEid = luaL_checkint(L, 2);
+        TENTITYID triggerEid = luaL_checkinteger(L, 2);
 
-        int nEventId = luaL_checkint(L, 3);
+        int nEventId = luaL_checkinteger(L, 3);
         CHECK_UNSIGNED(nEventId, 3);
 
         CEventDispatcher * p = GetWorld()->GetEventDispatcher();
@@ -134,7 +134,7 @@ namespace mogo
     int CEntityParent::lTriggerEvent(lua_State* L)
     {
         //first param is userdata
-        int nEventId = luaL_checkint(L, 2);
+        int nEventId = luaL_checkinteger(L, 2);
         CHECK_UNSIGNED(nEventId, 2);
 
         //参数个数
@@ -173,13 +173,13 @@ namespace mogo
     int CEntityParent::lAddTimer(lua_State* L)
     {
         //first param is userdata
-        int nStart = luaL_checkint(L, 2);
+        int nStart = luaL_checkinteger(L, 2);
         CHECK_UNSIGNED(nStart, 2);
 
-        int nInterval = luaL_checkint(L, 3);
+        int nInterval = luaL_checkinteger(L, 3);
         CHECK_UNSIGNED(nInterval, 3);
 
-        int nUserData = luaL_checkint(L, 4);
+        int nUserData = luaL_checkinteger(L, 4);
         CHECK_UNSIGNED(nUserData, 4);
 
         int nTimerId = GetWorld()->GetTimer().AddTimer(nStart, nInterval, m_id, nUserData);
@@ -190,7 +190,7 @@ namespace mogo
 
     int CEntityParent::lDelTimer(lua_State* L)
     {
-        int nTimerId = luaL_checkint(L, 2);
+        int nTimerId = luaL_checkinteger(L, 2);
         CHECK_UNSIGNED(nTimerId, 2);
 
         GetWorld()->GetTimer().DelTimer((uint32_t)nTimerId);
@@ -206,8 +206,8 @@ namespace mogo
         data.nLuaParamStackStart    = 5;
         data.u32EntityID            = GetId();
         data.strLuaFuncName         = luaL_checkstring(L, 2);
-        data.u32IntervalTick        = luaL_checkint(L, 3);
-        data.u16TotalTimes          = (uint16_t)luaL_checkint(L, 4);
+        data.u32IntervalTick        = luaL_checkinteger(L, 3);
+        data.u16TotalTimes          = (uint16_t)luaL_checkinteger(L, 4);
 
         CTimerActionBase& rAction = LuaTimerFactory(data);
         uint64_t n64ActionID = GetWorld()->GetLocalTimer().AddAction(rAction);

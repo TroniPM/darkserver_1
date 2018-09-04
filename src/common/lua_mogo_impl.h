@@ -24,7 +24,7 @@ T* _CreateEntity(lua_State* L)
     TENTITYID new_eid = 0;
     if((lua_gettop(L) > 1) && !lua_istable(L, 2))
     {
-        new_eid = (TENTITYID)luaL_checkint(L, 2);
+        new_eid = (TENTITYID)luaL_checkinteger(L, 2);
     }
     else
     {

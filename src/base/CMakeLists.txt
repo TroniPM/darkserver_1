@@ -17,7 +17,7 @@ add_executable(baseapp
 TARGET_LINK_LIBRARIES(baseapp "common")
 TARGET_LINK_LIBRARIES(baseapp "ssl")
 TARGET_LINK_LIBRARIES(baseapp "crypto")
-TARGET_LINK_LIBRARIES(baseapp "lua.5.2.4")
+TARGET_LINK_LIBRARIES(baseapp "lua")
 TARGET_LINK_LIBRARIES(baseapp "boost_regex")
 TARGET_LINK_LIBRARIES(baseapp "mysqlclient")
 

@@ -236,32 +236,32 @@ namespace mogo
         {
             case V_UINT8:
             {
-                v.vv.u8 = (uint8_t)luaL_checkint(L, idx);
+                v.vv.u8 = (uint8_t)luaL_checkinteger(L, idx);
                 break;
             }
             case V_INT8:
             {
-                v.vv.i8 = (int8_t)luaL_checkint(L, idx);
+                v.vv.i8 = (int8_t)luaL_checkinteger(L, idx);
                 break;
             }
             case V_UINT16:
             {
-                v.vv.u16 = (uint16_t)luaL_checkint(L, idx);
+                v.vv.u16 = (uint16_t)luaL_checkinteger(L, idx);
                 break;
             }
             case V_INT16:
             {
-                v.vv.i16 = (int16_t)luaL_checkint(L, idx);
+                v.vv.i16 = (int16_t)luaL_checkinteger(L, idx);
                 break;
             }
             case V_UINT32:
             {
-                v.vv.u32 = (uint32_t)luaL_checkint(L, idx);
+                v.vv.u32 = (uint32_t)luaL_checkinteger(L, idx);
                 break;
             }
             case V_INT32:
             {
-                v.vv.i32 = (int32_t)luaL_checkint(L, idx);
+                v.vv.i32 = (int32_t)luaL_checkinteger(L, idx);
                 break;
             }
             case V_UINT64:

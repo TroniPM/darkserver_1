@@ -17,7 +17,7 @@ add_executable(cellapp
 TARGET_LINK_LIBRARIES(cellapp "common")
 TARGET_LINK_LIBRARIES(cellapp "ssl")
 TARGET_LINK_LIBRARIES(cellapp "crypto")
-TARGET_LINK_LIBRARIES(cellapp "lua.5.2.4")
+TARGET_LINK_LIBRARIES(cellapp "lua")
 TARGET_LINK_LIBRARIES(cellapp "boost_regex")
 TARGET_LINK_LIBRARIES(cellapp "mysqlclient")
 

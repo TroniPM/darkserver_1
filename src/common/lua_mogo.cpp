@@ -160,13 +160,13 @@ int ListMethodCall(lua_State* L)
 
     if(strcmp(pszAttri, "set") == 0)
     {
-        int nSeq = luaL_checkint(L, 2);
+        int nSeq = luaL_checkinteger(L, 2);
         const char* pszValue = luaL_checkstring(L, 3);
         p->Set(L, nSeq, pszValue);
     }
     else if(strcmp(pszAttri, "del") == 0)
     {
-        int nSeq = luaL_checkint(L, 2);
+        int nSeq = luaL_checkinteger(L, 2);
         p->Del(L, nSeq);
     }
     else if(strcmp(pszAttri, "load") == 0)
@@ -552,13 +552,13 @@ int MailboxMtRpc(lua_State* L)
     CEntityMailbox em;
 
     lua_rawgeti(L, lua_upvalueindex(1), g_nMailBoxServerIdKey);
-    em.m_nServerMailboxId = (uint16_t)luaL_checkint(L, -1);
+    em.m_nServerMailboxId = (uint16_t)luaL_checkinteger(L, -1);
 
     lua_rawgeti(L, lua_upvalueindex(1), g_nMailBoxClassTypeKey);
-    em.m_nEntityType = (TENTITYTYPE)luaL_checkint(L, -1);
+    em.m_nEntityType = (TENTITYTYPE)luaL_checkinteger(L, -1);
 
     lua_rawgeti(L, lua_upvalueindex(1), g_nMailBoxEntityIdKey);
-    em.m_nEntityId = (TENTITYID)luaL_checkint(L, -1);
+    em.m_nEntityId = (TENTITYID)luaL_checkinteger(L, -1);
 
     lua_pop(L, 3);
 
@@ -592,7 +592,7 @@ int MailboxMtIndex(lua_State* L)
 
     lua_rawgeti(L, 1, g_nMailBoxClassTypeKey);
 
-    TENTITYTYPE etype = (TENTITYTYPE)luaL_checkint(L, -1);
+    TENTITYTYPE etype = (TENTITYTYPE)luaL_checkinteger(L, -1);
     const SEntityDef* pDef = GetWorld()->GetDefParser().GetEntityDefByType(etype);
     int32_t nFuncId = pDef->m_baseMethodsMap.GetIntByStr(szFunc);
     if(nFuncId == -1)
@@ -635,7 +635,7 @@ int BaseClientMailboxMtIndex(lua_State* L)
 
     lua_rawgeti(L, 1, g_nMailBoxClassTypeKey);
 
-    TENTITYTYPE etype = (TENTITYTYPE)luaL_checkint(L, -1);
+    TENTITYTYPE etype = (TENTITYTYPE)luaL_checkinteger(L, -1);
     const SEntityDef* pDef = GetWorld()->GetDefParser().GetEntityDefByType(etype);
     int32_t nFuncId = pDef->m_clientMethodsMap.GetIntByStr(szFunc);
     if(nFuncId == -1)
@@ -664,13 +664,13 @@ int BaseClientMailboxMtRpc(lua_State* L)
     CEntityMailbox em;
 
     lua_rawgeti(L, lua_upvalueindex(1), g_nMailBoxServerIdKey);
-    em.m_nServerMailboxId = (uint16_t)luaL_checkint(L, -1);
+    em.m_nServerMailboxId = (uint16_t)luaL_checkinteger(L, -1);
 
     lua_rawgeti(L, lua_upvalueindex(1), g_nMailBoxClassTypeKey);
-    em.m_nEntityType = (TENTITYTYPE)luaL_checkint(L, -1);
+    em.m_nEntityType = (TENTITYTYPE)luaL_checkinteger(L, -1);
 
     lua_rawgeti(L, lua_upvalueindex(1), g_nMailBoxEntityIdKey);
-    em.m_nEntityId = (TENTITYID)luaL_checkint(L, -1);
+    em.m_nEntityId = (TENTITYID)luaL_checkinteger(L, -1);
 
     lua_pop(L, 3);
 
@@ -711,13 +711,13 @@ int CellMailboxMtRpc(lua_State* L)
     CEntityMailbox em;
 
     lua_rawgeti(L, lua_upvalueindex(1), g_nMailBoxServerIdKey);
-    em.m_nServerMailboxId = (uint16_t)luaL_checkint(L, -1);
+    em.m_nServerMailboxId = (uint16_t)luaL_checkinteger(L, -1);
 
     lua_rawgeti(L, lua_upvalueindex(1), g_nMailBoxClassTypeKey);
-    em.m_nEntityType = (TENTITYTYPE)luaL_checkint(L, -1);
+    em.m_nEntityType = (TENTITYTYPE)luaL_checkinteger(L, -1);
 
     lua_rawgeti(L, lua_upvalueindex(1), g_nMailBoxEntityIdKey);
-    em.m_nEntityId = (TENTITYID)luaL_checkint(L, -1);
+    em.m_nEntityId = (TENTITYID)luaL_checkinteger(L, -1);
 
     lua_pop(L, 3);
 
@@ -733,7 +733,7 @@ int CellMailboxMtIndex(lua_State* L)
 
     lua_rawgeti(L, 1, g_nMailBoxClassTypeKey);
 
-    TENTITYTYPE etype = (TENTITYTYPE)luaL_checkint(L, -1);
+    TENTITYTYPE etype = (TENTITYTYPE)luaL_checkinteger(L, -1);
     const SEntityDef* pDef = GetWorld()->GetDefParser().GetEntityDefByType(etype);
     int32_t nFuncId = pDef->m_cellMethodsMap.GetIntByStr(szFunc);
     if(nFuncId == -1)
@@ -772,13 +772,13 @@ int ClientMailboxMtRpc(lua_State* L)
     CClientMailbox em;
 
     lua_rawgeti(L, lua_upvalueindex(1), g_nMailBoxServerIdKey);
-    em.m_fd = (int32_t)luaL_checkint(L, -1);
+    em.m_fd = (int32_t)luaL_checkinteger(L, -1);
 
     lua_rawgeti(L, lua_upvalueindex(1), g_nMailBoxClassTypeKey);
-    em.m_nEntityType = (TENTITYTYPE)luaL_checkint(L, -1);
+    em.m_nEntityType = (TENTITYTYPE)luaL_checkinteger(L, -1);
 
     lua_rawgeti(L, lua_upvalueindex(1), g_nMailBoxEntityIdKey);
-    em.m_nEntityId = (TENTITYID)luaL_checkint(L, -1);
+    em.m_nEntityId = (TENTITYID)luaL_checkinteger(L, -1);
 
     lua_pop(L, 3);
 
@@ -797,7 +797,7 @@ int ClientMailboxMtIndex(lua_State* L)
 
     lua_rawgeti(L, 1, g_nMailBoxClassTypeKey);
 
-    TENTITYTYPE etype = (TENTITYTYPE)luaL_checkint(L, -1);
+    TENTITYTYPE etype = (TENTITYTYPE)luaL_checkinteger(L, -1);
     const SEntityDef* pDef = GetWorld()->GetDefParser().GetEntityDefByType(etype);
     int32_t nFuncId = pDef->m_clientMethodsMap.GetIntByStr(szFunc);
     if(nFuncId == -1)
@@ -1776,7 +1776,7 @@ int LuaLogError(lua_State* L)
 //lua脚本中根据eid获取entity对象
 int GetEntity(lua_State* L)
 {
-    TENTITYID eid = (TENTITYID)luaL_checkint(L, 1);
+    TENTITYID eid = (TENTITYID)luaL_checkinteger(L, 1);
     CEntityParent* p = GetWorld()->GetEntity(eid);
     if(p)
     {
@@ -2172,7 +2172,7 @@ int bit_stest(lua_State* L)
     const char* s = luaL_checklstring(L, 1, (size_t*)&n);
     //printf("bit_stest  :");print_hex(s, n);
 
-    int nIdx = luaL_checkint(L, 2);
+    int nIdx = luaL_checkinteger(L, 2);
     if(nIdx < 0)
     {
         lua_pushinteger(L, 0);
@@ -2199,7 +2199,7 @@ int bit_sset(lua_State* L)
     int n = 0;
     const char* s = luaL_checklstring(L, 1, (size_t*)&n);
 
-    int nIdx = luaL_checkint(L, 2);
+    int nIdx = luaL_checkinteger(L, 2);
     if(nIdx < 0)
     {
         lua_pushfstring(L, "mogo.sset,nIdx", nIdx);
@@ -2253,7 +2253,7 @@ int bit_sunset(lua_State* L)
         memcpy(s, s0, n);
     }
 
-    int nIdx = luaL_checkint(L, 2);
+    int nIdx = luaL_checkinteger(L, 2);
     if(nIdx >= 0)
     {
         enum { LSHIFT_SIZE = 3, CHAR_MASK = 0x7,};
@@ -2277,7 +2277,7 @@ int bit_wtest(lua_State* L)
     const char* s = luaL_checklstring(L, 1, (size_t*)&n);
     //printf("bit_stest  :");print_hex(s, n);
 
-    int nIdx = luaL_checkint(L, 2);
+    int nIdx = luaL_checkinteger(L, 2);
     if(nIdx < 0)
     {
         lua_pushinteger(L, 0);
@@ -2309,13 +2309,13 @@ int bit_wset(lua_State* L)
     int n = 0;
     const char* s = luaL_checklstring(L, 1, (size_t*)&n);
 
-    int nIdx = luaL_checkint(L, 2);
+    int nIdx = luaL_checkinteger(L, 2);
     if(nIdx < 0)
     {
         return 0;
     }
 
-    int nValue = luaL_checkint(L, 3);
+    int nValue = luaL_checkinteger(L, 3);
     if(nValue < 0 || nValue > MAX_VALUE_VALUE)
     {
         return 0;
@@ -2389,10 +2389,10 @@ float Point2PointDistance(int x1, int y1, int x2, int y2)
 
 int LuaPoint2PointDistance(lua_State* L)
 {
-    int x1 = luaL_checkint(L, 1);
-    int y1 = luaL_checkint(L, 2);
-    int x2 = luaL_checkint(L, 3);
-    int y2 = luaL_checkint(L, 4);
+    int x1 = luaL_checkinteger(L, 1);
+    int y1 = luaL_checkinteger(L, 2);
+    int x2 = luaL_checkinteger(L, 3);
+    int y2 = luaL_checkinteger(L, 4);
 
     int d = (int)Point2PointDistance(x1, y1, x2, y2);
     lua_pushinteger(L, d);
@@ -2424,12 +2424,12 @@ float Point2lineDistance(int x, int y, int x1, int y1, int x2, int y2)
 
 int LuaPoint2LineDistance(lua_State* L)
 {
-    int x1 = luaL_checkint(L, 1);
-    int y1 = luaL_checkint(L, 2);
-    int x2 = luaL_checkint(L, 3);
-    int y2 = luaL_checkint(L, 4);
-    int x3 = luaL_checkint(L, 5);
-    int y3 = luaL_checkint(L, 6);
+    int x1 = luaL_checkinteger(L, 1);
+    int y1 = luaL_checkinteger(L, 2);
+    int x2 = luaL_checkinteger(L, 3);
+    int y2 = luaL_checkinteger(L, 4);
+    int x3 = luaL_checkinteger(L, 5);
+    int y3 = luaL_checkinteger(L, 6);
 
     int d = (int)Point2lineDistance(x1, y1, x2, y2, x3, y3);
     lua_pushinteger(L, d);
@@ -2442,7 +2442,7 @@ int LuaPoint2LineDistance(lua_State* L)
 int LoadBlockMap(lua_State* L)
 {
 #ifndef _WIN32
-    uint16_t unMapId = (uint16_t)luaL_checkint(L, 1);
+    uint16_t unMapId = (uint16_t)luaL_checkinteger(L, 1);
     const char* pszFn = luaL_checkstring(L, 2);
 
     CBlockMapMgr& bmm = GetWorld()->GetBlockMapMgr();
@@ -2457,12 +2457,12 @@ int MoveSimple(lua_State* L)
 #ifdef _WIN32
 	return 0;
 #else
-    int x1 = luaL_checkint(L, 1);
-    int y1 = luaL_checkint(L, 2);
-    int x2 = luaL_checkint(L, 3);
-    int y2 = luaL_checkint(L, 4);
-    int speed = luaL_checkint(L, 5);
-    int map_id = luaL_checkint(L, 6);
+    int x1 = luaL_checkinteger(L, 1);
+    int y1 = luaL_checkinteger(L, 2);
+    int x2 = luaL_checkinteger(L, 3);
+    int y2 = luaL_checkinteger(L, 4);
+    int speed = luaL_checkinteger(L, 5);
+    int map_id = luaL_checkinteger(L, 6);
     //printf("lmove,%d,%d,%d,%d\n",x1,y1,x2,y2);
 
     int x3=0,y3=0;
@@ -2529,7 +2529,7 @@ int AddStopWord(lua_State* L)
         ERegex    = 3,      //正则表达式
     };
 
-    int nWordType = luaL_checkint(L, 1);
+    int nWordType = luaL_checkinteger(L, 1);
     const char* pszWord = luaL_checkstring(L, 2);
     if(nWordType == EStopWord)
     {
@@ -2652,7 +2652,7 @@ int CrossClientResp(lua_State* L)
         return 0;
     }
 
-    uint32_t nSeq = (uint32_t)luaL_checkint(L, 1);
+    uint32_t nSeq = (uint32_t)luaL_checkinteger(L, 1);
     const char* pszEntityName = luaL_checkstring(L, 2);    
     const char* pszRpc = luaL_checkstring(L, 3);
 
@@ -2719,7 +2719,7 @@ int CrossClientBroadcast(lua_State* L)
         return 0;
     }
 
-    uint16_t n1 = (uint16_t)luaL_checkint(L, 1);
+    uint16_t n1 = (uint16_t)luaL_checkinteger(L, 1);
     const char* s2 = luaL_checkstring(L, 2);
 
     CPluto* u = new CPluto;

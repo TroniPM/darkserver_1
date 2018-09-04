@@ -23,7 +23,7 @@ add_executable(syncdb
 TARGET_LINK_LIBRARIES(syncdb "common")
 TARGET_LINK_LIBRARIES(syncdb "ssl")
 TARGET_LINK_LIBRARIES(syncdb "crypto")
-TARGET_LINK_LIBRARIES(syncdb "lua.5.2.4")
+TARGET_LINK_LIBRARIES(syncdb "lua")
 TARGET_LINK_LIBRARIES(syncdb "boost_regex")
 TARGET_LINK_LIBRARIES(syncdb "mysqlclient")
 TARGET_LINK_LIBRARIES(syncdb "hiredis")

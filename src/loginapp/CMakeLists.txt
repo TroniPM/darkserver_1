@@ -19,7 +19,7 @@ add_executable(loginapp
 TARGET_LINK_LIBRARIES(loginapp "common")
 TARGET_LINK_LIBRARIES(loginapp "ssl")
 TARGET_LINK_LIBRARIES(loginapp "crypto")
-TARGET_LINK_LIBRARIES(loginapp "lua.5.2.4")
+TARGET_LINK_LIBRARIES(loginapp "lua")
 TARGET_LINK_LIBRARIES(loginapp "boost_regex")
 TARGET_LINK_LIBRARIES(loginapp "mysqlclient")
 

@@ -534,7 +534,7 @@ int CreateBaseAnywhere(lua_State* L)
 int DestroyBaseEntity(lua_State* L)
 {
 
-    TENTITYID eid = (TENTITYID)luaL_checkint(L, 1);
+    TENTITYID eid = (TENTITYID)luaL_checkinteger(L, 1);
     CEntityBase* pe = (CEntityBase*)(GetWorldbase().GetEntity(eid));
     if(pe)
     {
@@ -740,7 +740,7 @@ int GetRptName(lua_State* L)
 //修改loginapp登录状态
 int SetLogin(lua_State* L)
 {
-    int n = luaL_checkint(L, 1);
+    int n = luaL_checkinteger(L, 1);
     if(n != 0)
     {
         n = 1;
@@ -753,7 +753,7 @@ int SetLogin(lua_State* L)
 int ForbidLogin(lua_State* L)
 {
     const char* account = luaL_checkstring(L, 1);
-    int n = luaL_checkint(L, 2);
+    int n = luaL_checkinteger(L, 2);
 
     GetWorld()->RpcCall(SERVER_LOGINAPP, MSGID_LOGINAPP_FORBIDLOGIN, account, (uint32_t)n);
     return 0;
@@ -761,7 +761,7 @@ int ForbidLogin(lua_State* L)
 int ForbidLoginByIp(lua_State* L)
 {
 	const char* ip = luaL_checkstring(L, 1);
-	int n = luaL_checkint(L, 2);
+	int n = luaL_checkinteger(L, 2);
 
 	GetWorld()->RpcCall(SERVER_LOGINAPP, MSGID_LOGINAPP_FORBID_IP_UNTIL_TIME, ip, (uint32_t)n);
 	return 0;
@@ -769,7 +769,7 @@ int ForbidLoginByIp(lua_State* L)
 int ForbidLoginByAccount(lua_State* L)
 {
 	const char* account = luaL_checkstring(L, 1);
-	int n = luaL_checkint(L, 2);
+	int n = luaL_checkinteger(L, 2);
 
 	GetWorld()->RpcCall(SERVER_LOGINAPP, MSGID_LOGINAPP_FORBID_ACCOUNT_UNTIL_TIME, account, (uint32_t)n);
 	return 0;
@@ -796,7 +796,7 @@ int HttpReq(lua_State* L)
 
 int BrowserResponse(lua_State* L)
 {	
-	int32_t client_fd = (int32_t)luaL_checkint(L, 1);
+	int32_t client_fd = (int32_t)luaL_checkinteger(L, 1);
 	const char* result = luaL_checkstring(L, 2);
 
 	GetWorld()->RpcCall(SERVER_LOG, MSGID_OTHER_CLIENT_RESPONSE, client_fd,  result);

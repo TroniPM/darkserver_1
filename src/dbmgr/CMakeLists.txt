@@ -22,7 +22,7 @@ add_executable(dbmgr
 TARGET_LINK_LIBRARIES(dbmgr "common")
 TARGET_LINK_LIBRARIES(dbmgr "ssl")
 TARGET_LINK_LIBRARIES(dbmgr "crypto")
-TARGET_LINK_LIBRARIES(dbmgr "lua.5.2.4")
+TARGET_LINK_LIBRARIES(dbmgr "lua")
 TARGET_LINK_LIBRARIES(dbmgr "boost_regex")
 TARGET_LINK_LIBRARIES(dbmgr "mysqlclient")
 TARGET_LINK_LIBRARIES(dbmgr "hiredis")

@@ -501,7 +501,7 @@ namespace mogo
     int CEntityCell::lSetVisiable(lua_State* L)
     {
         //param 1 is userdata
-        uint8_t nVisiable = (uint8_t)luaL_checkint(L, 2);
+        uint8_t nVisiable = (uint8_t)luaL_checkinteger(L, 2);
         //LogDebug("CEntityCell::lSetVisiable", "id=%d;nVisiable=%d", this->GetId(), nVisiable);
         SetVisiable(nVisiable);
 
@@ -511,7 +511,7 @@ namespace mogo
     int CEntityCell::lSetSpeed(lua_State* L)
     {
         //param 1 is userdata
-        uint16_t nSpeed = (uint16_t)luaL_checkint(L, 2);
+        uint16_t nSpeed = (uint16_t)luaL_checkinteger(L, 2);
 
         //LogDebug("CEntityCell::lSetSpeed", "nSpeed=%d", nSpeed);
 
@@ -601,7 +601,7 @@ namespace mogo
 	
 	int CEntityCell::lIsInAOI(lua_State* L)
 	{
-		TENTITYID entity_id	= (TENTITYID)luaL_checkint(L, 2);
+		TENTITYID entity_id	= (TENTITYID)luaL_checkinteger(L, 2);
 		bool bIsInAOI		= m_entitiesIds.find(entity_id) != m_entitiesIds.end();
         lua_pushboolean(L, (bIsInAOI ? 1 : 0));
 		return 1;
@@ -610,7 +610,7 @@ namespace mogo
     int CEntityCell::lGetDistance(lua_State* L)
     {
         //param 1 is userdata
-        TENTITYID entity_id = (TENTITYID)luaL_checkint(L, 2);
+        TENTITYID entity_id = (TENTITYID)luaL_checkinteger(L, 2);
         if (m_id != entity_id)
         {
             CEntityCell* pEntity = dynamic_cast< CEntityCell* >(GetWorld()->GetEntity(entity_id));
@@ -679,7 +679,7 @@ namespace mogo
             return 0;
         }
 
-        TENTITYID nSpaceId = (TENTITYID)luaL_checkint(L, 2);
+        TENTITYID nSpaceId = (TENTITYID)luaL_checkinteger(L, 2);
 
         CWorldCell& the_world = GetWorldcell();
         CSpace* sp = the_world.GetSpace(nSpaceId);
@@ -742,7 +742,7 @@ namespace mogo
     //int CEntityCell::lGetEntities(lua_State* L)
     //{
     //    //param 1 is userdata
-    //    float range = (float)luaL_checkint(L, 2);
+    //    float range = (float)luaL_checkinteger(L, 2);
 
     //    CSpace* sp = GetMySpace();
     //    if (sp)
@@ -1268,8 +1268,8 @@ namespace mogo
             return 0;
         }
 
-        position_t newX = (position_t)luaL_checkint(L, 2);
-        position_t newY = (position_t)luaL_checkint(L, 3);
+        position_t newX = (position_t)luaL_checkinteger(L, 2);
+        position_t newY = (position_t)luaL_checkinteger(L, 3);
 
         if(newX != m_pos[0] || newY != m_pos[1])
         {
@@ -1291,9 +1291,9 @@ namespace mogo
             return 0;                                     
         }                                                 
                                                   
-        position_t tarX = (position_t)luaL_checkint(L, 2);
-        position_t tarY = (position_t)luaL_checkint(L, 3); 
-//        int needSync = (int)luaL_checkint(L, 4);
+        position_t tarX = (position_t)luaL_checkinteger(L, 2);
+        position_t tarY = (position_t)luaL_checkinteger(L, 3); 
+//        int needSync = (int)luaL_checkinteger(L, 4);
 
         int16_t x1 = m_pos[0];
         int16_t y1 = m_pos[1];
@@ -1381,7 +1381,7 @@ namespace mogo
         int n = lua_gettop(L); 
         if (n < 1) return 0;
 
-        int tmpFace = luaL_checkint(L, 2);
+        int tmpFace = luaL_checkinteger(L, 2);
 
         face = tmpFace*0.5f;
 
@@ -1442,8 +1442,8 @@ namespace mogo
 		position_t y1 = m_pos[1];
 
 		CSpace* sp = GetMySpace();
-		TENTITYID emenyId = (TENTITYID)luaL_checkint(L, 2); 
-		int32_t spellDis = luaL_checkint(L, 3);
+		TENTITYID emenyId = (TENTITYID)luaL_checkinteger(L, 2);
+		int32_t spellDis = luaL_checkinteger(L, 3);
         //printf("spellDis:%d  %d\n", spellDis, (int)(spellDis*0.9));
         spellDis *= 0.9f;
 
@@ -1506,8 +1506,8 @@ namespace mogo
             return 0;
         }
 
-        position_t tarX = (position_t)luaL_checkint(L, 2);
-        position_t tarY = (position_t)luaL_checkint(L, 3);
+        position_t tarX = (position_t)luaL_checkinteger(L, 2);
+        position_t tarY = (position_t)luaL_checkinteger(L, 3);
 
         if (tarX == m_pos[0] && tarY == m_pos[1])
         {

@@ -1088,7 +1088,7 @@ CPluto& CPluto::FillPlutoFromLua(VTYPE vt, lua_State* L, int idx)
         case V_UINT8:
         {
             //todo, 检查整数系列的类型是否正确,不能直接就转换类型
-            int n = luaL_checkint(L, idx);
+            int n = luaL_checkinteger(L, idx);
 #ifndef _WIN32
             MG_ASSERT(n >= 0 && n <= UINT8_MAX, "uint8数值溢出");
 #endif
@@ -1098,7 +1098,7 @@ CPluto& CPluto::FillPlutoFromLua(VTYPE vt, lua_State* L, int idx)
         }
         case V_UINT16:
         {
-            int n = luaL_checkint(L, idx);
+            int n = luaL_checkinteger(L, idx);
 #ifndef _WIN32
             MG_ASSERT(n >= 0 && n <= UINT16_MAX, "uint16数值溢出");
 #endif
@@ -1108,7 +1108,7 @@ CPluto& CPluto::FillPlutoFromLua(VTYPE vt, lua_State* L, int idx)
         }
         case V_UINT32:
         {
-            uint32_t n = (uint32_t)luaL_checkint(L, idx);
+            uint32_t n = (uint32_t)luaL_checkinteger(L, idx);
             u << n;
             //printf("arg: idx = %d ; value = %d \n", idx, n);
             break;
@@ -1123,7 +1123,7 @@ CPluto& CPluto::FillPlutoFromLua(VTYPE vt, lua_State* L, int idx)
         case V_INT8:
         {
             //todo, 检查整数系列的类型是否正确,不能直接就转换类型
-            int n = luaL_checkint(L, idx);
+            int n = luaL_checkinteger(L, idx);
 #ifndef _WIN32
             MG_ASSERT(n >= INT8_MIN && n <= INT8_MAX, "int8数值溢出");
 #endif
@@ -1133,7 +1133,7 @@ CPluto& CPluto::FillPlutoFromLua(VTYPE vt, lua_State* L, int idx)
         }
         case V_INT16:
         {
-            int n = luaL_checkint(L, idx);
+            int n = luaL_checkinteger(L, idx);
 #ifndef _WIN32
             MG_ASSERT(n >= INT16_MIN && n <= INT16_MAX, "int16数值溢出");
 #endif
@@ -1143,7 +1143,7 @@ CPluto& CPluto::FillPlutoFromLua(VTYPE vt, lua_State* L, int idx)
         }
         case V_INT32:
         {
-            int32_t n = (int32_t)luaL_checkint(L, idx);
+            int32_t n = (int32_t)luaL_checkinteger(L, idx);
             u << n;
             //printf("arg: idx = %d ; value = %d \n", idx, n);
             break;

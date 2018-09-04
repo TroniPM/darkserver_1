@@ -19,7 +19,7 @@ add_executable(timerd
 TARGET_LINK_LIBRARIES(timerd "common")
 TARGET_LINK_LIBRARIES(timerd "ssl")
 TARGET_LINK_LIBRARIES(timerd "crypto")
-TARGET_LINK_LIBRARIES(timerd "lua.5.2.4")
+TARGET_LINK_LIBRARIES(timerd "lua")
 TARGET_LINK_LIBRARIES(timerd "boost_regex")
 TARGET_LINK_LIBRARIES(timerd "mysqlclient")
 

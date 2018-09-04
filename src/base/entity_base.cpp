@@ -606,13 +606,13 @@ namespace mogo
 
         //检查目标base的server_id
         lua_rawgeti(L, 2, g_nMailBoxServerIdKey);
-        int nServerId = luaL_checkint(L, -1);
+        int nServerId = luaL_checkinteger(L, -1);
 
         lua_rawgeti(L, 2, g_nMailBoxEntityIdKey);
-        TENTITYID nId = (TENTITYID)luaL_checkint(L, -1);
+        TENTITYID nId = (TENTITYID)luaL_checkinteger(L, -1);
 
-        int16_t x = (int16_t)luaL_checkint(L, 3);
-        int16_t y = (int16_t)luaL_checkint(L, 4);
+        int16_t x = (int16_t)luaL_checkinteger(L, 3);
+        int16_t y = (int16_t)luaL_checkinteger(L, 4);
         const char* szMask = luaL_checkstring(L, 5);
         //LogDebug("CEntityBase::lCreateCellEntity", szMask);
         CPluto* u = new CPluto;
@@ -723,7 +723,7 @@ namespace mogo
     {
         //脚本层直接指定一个sql语句
         //param1 is userdata
-        //uint32_t nCallBackId = luaL_checkint(L, 2);            //回调Id
+        //uint32_t nCallBackId = luaL_checkinteger(L, 2);            //回调Id
         const char* pszCallBackFunc = luaL_checkstring(L, 2);  //回调函数名
         const char* pszEntity = luaL_checkstring(L, 3);        //表名
         const char* pszSql = luaL_checkstring(L, 4);           //SQL语句
@@ -772,7 +772,7 @@ namespace mogo
     //使用回调id的数据库操作接口
     int CEntityBase::lTable2Select(lua_State* L)
     {
-        uint32_t nCbId = (uint32_t)luaL_checkint(L, 2);
+        uint32_t nCbId = (uint32_t)luaL_checkinteger(L, 2);
         const char* pszTbl = luaL_checkstring(L, 3);	//table name
 
         if(lua_gettop(L) == 3)
@@ -792,7 +792,7 @@ namespace mogo
     {
         //param 1 is userdata
 
-        uint32_t nCbId = (uint32_t)luaL_checkint(L, 2);	//callback id
+        uint32_t nCbId = (uint32_t)luaL_checkinteger(L, 2);	//callback id
         const char* pszTbl = luaL_checkstring(L, 3);	//table name
         luaL_checkany(L, 4);							//table
 
@@ -857,7 +857,7 @@ namespace mogo
     int CEntityBase::lTable2Excute(lua_State* L)
     {
         //param 1 is userdata
-        uint32_t nCbId = (uint32_t)luaL_checkint(L, 2);	//callback id
+        uint32_t nCbId = (uint32_t)luaL_checkinteger(L, 2);	//callback id
         const char* pszSql = luaL_checkstring(L, 3);	//sql
 
         GetWorld()->RpcCall(SERVER_DBMGR, MSGID_DBMGR_TABLE2_EXCUTE, m_mymb.m_nServerMailboxId, m_id, nCbId, pszSql);
@@ -867,7 +867,7 @@ namespace mogo
 
     int CEntityBase::lSetCellVisiable(lua_State* L)
     {
-        uint8_t n = (uint8_t)luaL_checkint(L, 2);
+        uint8_t n = (uint8_t)luaL_checkinteger(L, 2);
         int nCellId = GetCellServerId();
         if(nCellId > 0)
         {

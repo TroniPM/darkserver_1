@@ -24,7 +24,7 @@ add_executable(logapp
 TARGET_LINK_LIBRARIES(logapp "common")
 TARGET_LINK_LIBRARIES(logapp "ssl")
 TARGET_LINK_LIBRARIES(logapp "crypto")
-TARGET_LINK_LIBRARIES(logapp "lua.5.2.4")
+TARGET_LINK_LIBRARIES(logapp "lua")
 TARGET_LINK_LIBRARIES(logapp "boost_regex")
 TARGET_LINK_LIBRARIES(logapp "mysqlclient")
 TARGET_LINK_LIBRARIES(logapp "curl")
